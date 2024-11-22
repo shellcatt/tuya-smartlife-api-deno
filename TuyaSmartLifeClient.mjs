@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { format } from 'util';
+import { format } from 'node:util';
 import initDebug from 'debug';
 const debug = initDebug('api');
 
@@ -25,6 +25,7 @@ class SmartLifeSession {
       this.devices = [];
     } 
     else if (auth.accessToken && auth.refreshToken) {
+      // const NOW = Math.floor(Date.now() / 1000);
       this.accessToken = auth.accessToken;
       this.expireTime = auth.expireTime || 0;
       this.refreshToken = auth.refreshToken;
