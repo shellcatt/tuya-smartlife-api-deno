@@ -1,0 +1,13 @@
+{
+  "name": "@shellcatt/tuya-smartlife-api",
+  "version": "0.7.4",
+  "tasks": {
+    "cli": "deno --allow-env --allow-read --allow-net --allow-write --allow-sys cli.js",
+    "test": "deno --allow-env --allow-read --allow-net --allow-write --allow-sys tests/suite.js",
+    "binary": "deno compile --allow-env --allow-read --allow-net --allow-write --allow-sys -o tuyacli cli.js"
+  },
+  "imports": {
+    "@std/async": "jsr:@std/async@^1.0.8"
+  },
+  "exports": "./index.mjs"
+}

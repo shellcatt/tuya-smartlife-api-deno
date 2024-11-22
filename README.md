@@ -1,36 +1,31 @@
-# Tuya Smart Life API (NodeJS)
+# Tuya Smart Life API + CLI   
 
-## Usage 
+## Usage  [![requirements]( https://img.shields.io/badge/requires-deno-blue?logo=deno)](https://docs.deno.com/runtime/getting_started/installation/)
 
-<details>
-<summary> <strong> Standalone </strong> </summary>
-
-- install modules with `npm install`
-- create a `.env` file (see `.env.example`)
-- run tests with `npm test`
-
-</details>
 
 <details open>
-	<summary> <strong> Module </strong> </summary>
+<summary> <strong> Module </strong> </summary>
 
-- install NPM package 
+- install package **locally** 
 ```bash
-npm install @shellcatt/tuya-smartlife-api
+deno install jsr:@shellcatt/tuya-smartlife-api
 ```
 
 - import ESM
-> See [test.js](./test.js)
 
 ```javascript
 import { TuyaSmartLifeClient } from "tuya-smartlife-api";
 const client = new TuyaSmartLifeClient();
 try {
-	await client.init('jondoe@example.co.uk', 'password', '44');
+	await client.init('jondoe@example.co.uk', 'password', 'eu');
 	await client.discoverDevices();
 
-	tDevices = client.getAllDevices();
+	const tDevices = client.getAllDevices();
 	console.log(tDevices);
+
+	const myFirstBulb = await client.getDevicesByType('light')[0];
+	await myFirstBulb.turnOn();
+
 } catch (e) {
 	console.error('Failed because', e);
 }
@@ -38,18 +33,34 @@ try {
 
 </details>
 
-## TODO 
+<details open>
+<summary> <strong> Standalone </strong> </summary>
 
-- [x] port and optimize [TuyaPy](https://pypi.org/project/tuyapy/)
-- [x] implement integration tests
-- [x] implement pure CLI (see [Examples](#examples))
-  - [x] list devices (short / long format)
-  - [x] control a device's state
-  - [x] control a device's custom attributes
-- [ ] use [Configstore](https://www.npmjs.com/package/configstore) for credentials & device cache _(not `session.json`)_
-- [ ] implement unit tests
-- [ ] implement classes for other IoT devices (climate, fan, lock, etc.)
-- [x] [~~implement TUI (blessed-contrib)~~](https://github.com/shellcatt/smartlife-tui)
+- install package **globally**
+```bash
+deno install -g -n tuyacli jsr:@shellcat/tuya-smartlife-api 
+```
+
+- verify installation  
+```bash
+tuyacli
+```
+```
+Usage: tuyacli [options] [command]
+
+Options:
+  -V, --version                   output the version number
+  -h, --help                      display help for command
+
+Commands:
+  auth                            login with SmartLife
+  test                            live test a selected device's functions set
+  list [options]                  list devices and their state / attributes
+  control [options] <name-or-id>  control a device's state
+  help                            output usage information
+```
+
+</details>
 
 ## Examples 
 
@@ -72,9 +83,20 @@ node cli control <ID|Name> --rgb 90,30,115 # RGB something
 ```
 
 
-## Credits
+## TODO 
+
+- ✅ port and optimize [tuya-smartlife-api-node](https://github.com/shellcatt/tuya-smartlife-api-node)
+- ✅ port unit tests
+- ❌ port pipelines
+
+- ... [**Original Roadmap**](https://github.com/shellcatt/tuya-smartlife-api-node#roadmap)
+
+
+## Credits ![License](https://img.shields.io/badge/license-MIT-73901d)
 
 > Inspired by [TuyaPy](https://pypi.org/project/tuyapy/) (backend) and [SmartLife](https://github.com/ndg63276/smartlife) (web) interfaces to [Tuya](https://tuya.com/)'s **[SmartAtHome](https://smartathome.co.uk/smartlife/)** for IoT smart device control. 
+
+
 
 #### See also 
  - [CloudTuya](https://github.com/unparagoned/cloudtuya)
