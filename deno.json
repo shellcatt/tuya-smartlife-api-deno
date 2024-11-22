@@ -1,9 +1,9 @@
 {
   "name": "@shellcatt/tuya-smartlife-api",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "tasks": {
     "cli": "deno --allow-env --allow-read --allow-net --allow-write --allow-sys cli.js",
-    "live": "deno --allow-env --allow-read --allow-net --allow-write --allow-sys test.js test",
+    "test": "deno --allow-env --allow-read --allow-net --allow-write --allow-sys tests/suite.js",
     "binary": "deno compile --allow-env --allow-read --allow-net --allow-write --allow-sys -o tuyacli cli.js"
   },
   "imports": {

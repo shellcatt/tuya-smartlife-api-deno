@@ -85,16 +85,11 @@ node cli control <ID|Name> --rgb 90,30,115 # RGB something
 
 ## TODO 
 
-- ✅ port and optimize [TuyaPy](https://pypi.org/project/tuyapy/)
-- ✅ implement integration tests
-- ✅ implement pure CLI 
-  - ✅ list devices (short / long format)
-  - ✅ control a device's state
-  - ✅ control a device's custom attributes
--  ✅ use [Configstore](https://www.npmjs.com/package/configstore) for credentials & device cache _(not `session.json`)_
--  ❌ implement unit tests
--  ❌ implement classes for other IoT devices (climate, fan, lock, etc.)
-- ❌ [~~implement TUI (blessed-contrib)~~](https://github.com/yaronn/blessed-contrib)
+- ✅ port and optimize [tuya-smartlife-api-node](https://github.com/shellcatt/tuya-smartlife-api-node)
+- ✅ port unit tests
+- ❌ port pipelines
+
+- ... [**Original Roadmap**](https://github.com/shellcatt/tuya-smartlife-api-node#roadmap)
 
 
 ## Credits ![License](https://img.shields.io/badge/license-MIT-73901d)
