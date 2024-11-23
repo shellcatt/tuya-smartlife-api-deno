@@ -1,0 +1,46 @@
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - dev
+    paths:
+      - 'package.json'
+      - 'deno.json'
+      - 'jsr.json'
+      - '**/*.js'
+      - '**/*.mjs'
+      - '.github/workflows/**'
+      
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+      - 'deno.json'
+      - 'jsr.json'
+      - '**/*.js'
+      - '**/*.mjs'
+
+env:
+  HA_EMAIL: ${{secrets.HA_EMAIL}}
+  HA_PASS: ${{secrets.HA_PASS}}
+
+jobs:
+  test:
+    name: Run Mocha Tests
+    runs-on: ubuntu-latest
+
+    container: 
+      image: denoland/deno:2.0.0
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: deno install
+
+      - name: Run Tests
+        run: deno task test
+
