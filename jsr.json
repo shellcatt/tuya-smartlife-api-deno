@@ -1,6 +1,6 @@
 {
-	"name": "@scellcatt/tuya-smartlife-api",
-	"version": "0.7.4",
+	"name": "@shellcatt/tuya-smartlife-api",
+	"version": "0.7.5",
 	"exports": "./index.mjs",
 	"publish": {
 	  "include": [
