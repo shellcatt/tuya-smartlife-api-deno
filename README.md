@@ -1,5 +1,7 @@
 # Tuya Smart Life API + CLI   
 
+![Unit Tests](https://github.com/shellcatt/tuya-smartlife-api-deno/actions/workflows/main.yml/badge.svg?branch=main) ![Releases](https://github.com/shellcatt/tuya-smartlife-api-deno/actions/workflows/release.yml/badge.svg)
+
 ## Usage  [![requirements]( https://img.shields.io/badge/requires-deno-blue?logo=deno)](https://docs.deno.com/runtime/getting_started/installation/)
 
 
@@ -83,11 +85,13 @@ node cli control <ID|Name> --rgb 90,30,115 # RGB something
 ```
 
 
-## TODO 
+## TODO ![Direction](https://img.shields.io/badge/read-backwards-blue)
 
-- ✅ port and optimize [tuya-smartlife-api-node](https://github.com/shellcatt/tuya-smartlife-api-node)
-- ✅ port unit tests
+- ❌ migrate to TypeScript
+- ❌ add JSDoc
 - ✅ port pipelines
+- ✅ port unit tests
+- ✅ port and optimize [tuya-smartlife-api-node](https://github.com/shellcatt/tuya-smartlife-api-node)
 
 
 ## Credits ![License](https://img.shields.io/badge/license-MIT-73901d)

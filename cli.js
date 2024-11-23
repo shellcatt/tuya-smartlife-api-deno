@@ -13,6 +13,7 @@ import { delay as sleep } from "@std/async/delay";
 import colors from '@colors/colors';
 colors.enable();
 
+import process from "node:process";
 import { log } from "node:console";
 import initDebug from 'debug';
 const debug = initDebug('cli');
@@ -60,7 +61,7 @@ async function init() {
 		if (!authConfigStore.has('auth')) {
 			await auth();
 		} else if (!sessionStore.has('session.accessToken')) {
-			let auth = authConfigStore.get('auth');
+			const auth = authConfigStore.get('auth');
             await client.init(auth.HA_EMAIL, auth.HA_PASS, auth.HA_CC, auth.HA_REGION);
         } else {
             await client.load(sessionStore.get('session'));
@@ -108,7 +109,7 @@ function renderTable({ head, rows, widths }) {
 program
 	.command('auth')
 	.description('login with SmartLife')
-	.action(async (opts) => {
+	.action(async () => {
 		if (authConfigStore.has('auth')) {
 			const answer = await select({
 				message: 'Re-enter existing credentitals?',
@@ -194,7 +195,7 @@ program
 
 			} 
 			else if (tDevice.deviceType() == 'light') {
-				let devName = client.getDeviceById(tDevice.objectId()).name();
+				const devName = client.getDeviceById(tDevice.objectId()).name();
 				log(`Get device by Name (${devName})...`);
 				tBulb = client.getDeviceByName( devName );
 				log({ tBulb });
@@ -205,7 +206,7 @@ program
 				await sleep(500);
 				
 				log('Test Light Bulb controls...');
-				let response = await client.deviceControl(tBulb.objectId(), 'turnOnOff', { value: '1' });
+				const response = await client.deviceControl(tBulb.objectId(), 'turnOnOff', { value: '1' });
 				console.dir(response, { depth: null });
 				await sleep(500);
 		

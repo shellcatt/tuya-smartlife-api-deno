@@ -1,6 +1,7 @@
 import Mocha from 'mocha';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import process from "node:process";
 
 const mocha = new Mocha({
   reporter: 'spec',

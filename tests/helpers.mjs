@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs';
+import process from "node:process";
 
 import 'dotenv/config';
 

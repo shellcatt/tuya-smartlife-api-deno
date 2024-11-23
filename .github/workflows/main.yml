@@ -12,7 +12,8 @@ on:
       - '**/*.mjs'
       
   pull_request:
-    branches:
+    types: [ opened ]
+    branches: 
       - main
     paths:
       - 'package.json'
