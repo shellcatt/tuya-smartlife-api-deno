@@ -10,7 +10,6 @@ on:
       - 'jsr.json'
       - '**/*.js'
       - '**/*.mjs'
-      - '.github/workflows/**'
       
   pull_request:
     branches:
