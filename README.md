@@ -1,5 +1,7 @@
 # Tuya Smart Life API + CLI   
 
+![Unit Tests](https://github.com/shellcatt/tuya-smartlife-api-deno/actions/workflows/main.yml/badge.svg?branch=main) ![Releases](https://github.com/shellcatt/tuya-smartlife-api-deno/actions/workflows/release.yml/badge.svg)
+
 ## Usage  [![requirements]( https://img.shields.io/badge/requires-deno-blue?logo=deno)](https://docs.deno.com/runtime/getting_started/installation/)
 
 
