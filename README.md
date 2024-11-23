@@ -87,9 +87,7 @@ node cli control <ID|Name> --rgb 90,30,115 # RGB something
 
 - ✅ port and optimize [tuya-smartlife-api-node](https://github.com/shellcatt/tuya-smartlife-api-node)
 - ✅ port unit tests
-- ❌ port pipelines
-
-- ... [**Original Roadmap**](https://github.com/shellcatt/tuya-smartlife-api-node#roadmap)
+- ✅ port pipelines
 
 
 ## Credits ![License](https://img.shields.io/badge/license-MIT-73901d)
