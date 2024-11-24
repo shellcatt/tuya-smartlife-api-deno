@@ -77,7 +77,7 @@ node cli control <ID|Name> --state [0|off]
 node cli control <ID|Name> --toggle
 
 # Set light brightness, color temp & color 
-node cli control <ID|Name> --brigntness 30 
+node cli control <ID|Name> --brigtness 30 
 node cli control <ID|Name> --temperature 3500 # set warm temp
 node cli control <ID|Name> --hsv 78.34,1,100 # HSV chill green
 node cli control <ID|Name> --hsv 324.77,1,42 # HSV chill purple
